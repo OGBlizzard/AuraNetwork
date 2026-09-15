@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SHAÐØW Network | Dashboard</title>
+    <meta name="theme-color" content="#070b14" />
+    <link rel="manifest" href="pwa/manifest.json" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="css/mobile.css" />
+  </head>
+  <body class="app-body">
+    <div class="app-layout">
+      <aside class="sidebar glass-panel">
+        <div class="brand-wrap">
+          <div class="brand-mark">S</div>
+          <div>
+            <div class="brand-name">SHAÐØW</div>
+            <div class="brand-subtitle">Network</div>
+          </div>
+        </div>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a class="nav-item active" href="app.html"><span>🏠</span><span>HOME</span></a>
+          <a class="nav-item" href="messages.html"><span>💬</span><span>MESSAGES</span></a>
+          <a class="nav-item" href="files.html"><span>📁</span><span>MY FILES</span></a>
+          <a class="nav-item" href="community.html"><span>🌐</span><span>COMMUNITY</span></a>
+          <a class="nav-item" href="friends.html"><span>👥</span><span>FRIENDS</span></a>
+          <a class="nav-item" href="settings.html"><span>⚙️</span><span>SETTINGS</span></a>
+        </nav>
+
+        <div class="sidebar-card">
+          <span class="eyebrow small">Security</span>
+          <p>Protected sessions</p>
+          <div class="security-meter">
+            <span style="width: 92%"></span>
+          </div>
+        </div>
+      </aside>
+
+      <main class="app-main">
+        <header class="topbar app-topbar">
+          <div>
+            <span class="eyebrow small">Welcome back</span>
+            <h2 id="welcome-name">Loading profile…</h2>
+          </div>
+          <div class="top-actions">
+            <button class="button secondary" id="global-search-trigger">Search</button>
+            <button class="button ghost" id="logout-button">Log out</button>
+          </div>
+        </header>
+
+        <div class="content-section dashboard-grid">
+          <section class="glass-panel large-panel">
+            <div class="panel-header">
+              <h3>Recent files</h3>
+              <a href="files.html" class="text-link">View all</a>
+            </div>
+            <div class="file-list compact-list" id="recent-files-list">
+              <div class="list-row skeleton-row"></div>
+              <div class="list-row skeleton-row"></div>
+              <div class="list-row skeleton-row"></div>
+            </div>
+          </section>
+
+          <section class="glass-panel large-panel">
+            <div class="panel-header">
+              <h3>Recent conversations</h3>
+              <a href="messages.html" class="text-link">Open</a>
+            </div>
+            <div class="chat-list compact-list" id="recent-conversations-list">
+              <div class="list-row skeleton-row"></div>
+              <div class="list-row skeleton-row"></div>
+              <div class="list-row skeleton-row"></div>
+            </div>
+          </section>
+
+          <section class="glass-panel large-panel">
+            <div class="panel-header">
+              <h3>Friend activity</h3>
+              <span class="badge success">Online</span>
+            </div>
+            <div class="activity-list" id="friend-activity-list">
+              <div class="activity-item skeleton-item"></div>
+              <div class="activity-item skeleton-item"></div>
+              <div class="activity-item skeleton-item"></div>
+            </div>
+          </section>
+
+          <section class="glass-panel large-panel">
+            <div class="panel-header">
+              <h3>Community files</h3>
+              <a href="community.html" class="text-link">Browse</a>
+            </div>
+            <div class="file-list compact-list" id="community-files-list">
+              <div class="list-row skeleton-row"></div>
+              <div class="list-row skeleton-row"></div>
+              <div class="list-row skeleton-row"></div>
+            </div>
+          </section>
+
+          <section class="glass-panel large-panel">
+            <div class="panel-header">
+              <h3>Storage</h3>
+              <span class="badge neutral">Encrypted</span>
+            </div>
+            <div class="storage-card">
+              <div class="storage-bar"><span style="width: 64%"></span></div>
+              <div class="storage-stats">
+                <span>14.3 GB used</span>
+                <span>24.0 GB total</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="glass-panel large-panel">
+            <div class="panel-header">
+              <h3>Security & sessions</h3>
+              <a href="settings.html" class="text-link">Manage</a>
+            </div>
+            <ul class="session-list" id="session-summary-list">
+              <li>Current device • protected</li>
+              <li>Last login • 2 hours ago</li>
+              <li>Session expiry • 30 days</li>
+            </ul>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <a href="app.html" class="mobile-item active">🏠</a>
+      <a href="messages.html" class="mobile-item">💬</a>
+      <a href="files.html" class="mobile-item">📁</a>
+      <a href="community.html" class="mobile-item">🌐</a>
+      <a href="settings.html" class="mobile-item">⚙️</a>
+    </nav>
+
+    <div id="toast-container"></div>
+
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        if (window.AppShell) {
+          window.AppShell.initDashboard();
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SHAÐØW Network | Files</title>
+    <meta name="theme-color" content="#070b14" />
+    <link rel="manifest" href="pwa/manifest.json" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="css/mobile.css" />
+  </head>
+  <body class="app-body">
+    <div class="app-layout">
+      <aside class="sidebar glass-panel">
+        <div class="brand-wrap">
+          <div class="brand-mark">S</div>
+          <div>
+            <div class="brand-name">SHAÐØW</div>
+            <div class="brand-subtitle">Network</div>
+          </div>
+        </div>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a class="nav-item" href="app.html"><span>🏠</span><span>HOME</span></a>
+          <a class="nav-item" href="messages.html"><span>💬</span><span>MESSAGES</span></a>
+          <a class="nav-item active" href="files.html"><span>📁</span><span>MY FILES</span></a>
+          <a class="nav-item" href="community.html"><span>🌐</span><span>COMMUNITY</span></a>
+          <a class="nav-item" href="friends.html"><span>👥</span><span>FRIENDS</span></a>
+          <a class="nav-item" href="settings.html"><span>⚙️</span><span>SETTINGS</span></a>
+        </nav>
+      </aside>
+
+      <main class="app-main">
+        <header class="topbar app-topbar">
+          <div>
+            <span class="eyebrow small">Private storage</span>
+            <h2>My Files</h2>
+          </div>
+          <div class="top-actions">
+            <button class="button secondary" id="upload-trigger">Upload</button>
+            <button class="button ghost" id="toggle-view-btn">Grid</button>
+          </div>
+        </header>
+
+        <div class="toolbar glass-panel">
+          <div class="search-box">
+            <input type="search" id="file-search" placeholder="Search files…" />
+          </div>
+          <div class="segmented-control">
+            <button class="active" data-sort="recent">Recent</button>
+            <button data-sort="name">Name</button>
+            <button data-sort="size">Size</button>
+          </div>
+        </div>
+
+        <div class="upload-dropzone glass-panel" id="upload-dropzone">
+          <input id="file-input" type="file" multiple hidden />
+          <p>Drag and drop files here or tap to browse.</p>
+          <button class="button primary" id="upload-button">Choose files</button>
+        </div>
+
+        <section class="glass-panel file-panel">
+          <div class="panel-header">
+            <h3>Files</h3>
+            <span class="badge neutral" id="file-count">0 items</span>
+          </div>
+          <div id="files-grid" class="file-grid"></div>
+        </section>
+      </main>
+    </div>
+
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <a href="app.html" class="mobile-item">🏠</a>
+      <a href="messages.html" class="mobile-item">💬</a>
+      <a href="files.html" class="mobile-item active">📁</a>
+      <a href="community.html" class="mobile-item">🌐</a>
+      <a href="settings.html" class="mobile-item">⚙️</a>
+    </nav>
+
+    <div id="toast-container"></div>
+
+    <script src="js/api.js"></script>
+    <script src="js/encryption.js"></script>
+    <script src="js/files.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        if (window.FileManager) {
+          window.FileManager.init();
+        }
+      });
+    </script>
+  </body>
+</html>

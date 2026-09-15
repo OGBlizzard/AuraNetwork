@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SHAÐØW Network | Settings</title>
+    <meta name="theme-color" content="#070b14" />
+    <link rel="manifest" href="pwa/manifest.json" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="css/mobile.css" />
+  </head>
+  <body class="app-body">
+    <div class="app-layout">
+      <aside class="sidebar glass-panel">
+        <div class="brand-wrap">
+          <div class="brand-mark">S</div>
+          <div>
+            <div class="brand-name">SHAÐØW</div>
+            <div class="brand-subtitle">Network</div>
+          </div>
+        </div>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a class="nav-item" href="app.html"><span>🏠</span><span>HOME</span></a>
+          <a class="nav-item" href="messages.html"><span>💬</span><span>MESSAGES</span></a>
+          <a class="nav-item" href="files.html"><span>📁</span><span>MY FILES</span></a>
+          <a class="nav-item" href="community.html"><span>🌐</span><span>COMMUNITY</span></a>
+          <a class="nav-item" href="friends.html"><span>👥</span><span>FRIENDS</span></a>
+          <a class="nav-item active" href="settings.html"><span>⚙️</span><span>SETTINGS</span></a>
+        </nav>
+      </aside>
+
+      <main class="app-main">
+        <header class="topbar app-topbar">
+          <div>
+            <span class="eyebrow small">Profile</span>
+            <h2>Settings</h2>
+          </div>
+        </header>
+
+        <div class="settings-grid">
+          <section class="glass-panel form-panel">
+            <h3>Profile</h3>
+            <form id="profile-form" class="stack-form">
+              <label>
+                <span>Display name</span>
+                <input type="text" name="displayName" placeholder="Astra Nova" />
+              </label>
+              <label>
+                <span>Bio</span>
+                <textarea name="bio" rows="4" placeholder="Tell friends about yourself"></textarea>
+              </label>
+              <button type="submit" class="button primary">Save profile</button>
+            </form>
+          </section>
+
+          <section class="glass-panel form-panel">
+            <h3>Security</h3>
+            <form id="security-form" class="stack-form">
+              <label>
+                <span>Current password</span>
+                <input type="password" name="currentPassword" placeholder="Current password" />
+              </label>
+              <label>
+                <span>New password</span>
+                <input type="password" name="newPassword" placeholder="New password" />
+              </label>
+              <button type="submit" class="button secondary">Change password</button>
+            </form>
+          </section>
+
+          <section class="glass-panel form-panel">
+            <h3>Active sessions</h3>
+            <ul class="session-list" id="session-list">
+              <li>Current device • Protected session</li>
+              <li>Web • Active 2h ago</li>
+              <li>Mobile • Active 1d ago</li>
+            </ul>
+            <button class="button ghost" id="revoke-session-btn">Revoke other sessions</button>
+          </section>
+
+          <section class="glass-panel form-panel danger-panel">
+            <h3>Account actions</h3>
+            <button class="button ghost danger" id="delete-account-btn">Delete account</button>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <a href="app.html" class="mobile-item">🏠</a>
+      <a href="messages.html" class="mobile-item">💬</a>
+      <a href="files.html" class="mobile-item">📁</a>
+      <a href="community.html" class="mobile-item">🌐</a>
+      <a href="settings.html" class="mobile-item active">⚙️</a>
+    </nav>
+
+    <div id="toast-container"></div>
+
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        if (window.AppShell) {
+          window.AppShell.initSettings();
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SHAÐØW Network | Register</title>
+    <meta name="theme-color" content="#070b14" />
+    <link rel="manifest" href="pwa/manifest.json" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/auth.css" />
+    <link rel="stylesheet" href="css/mobile.css" />
+  </head>
+  <body class="auth-page">
+    <div class="bg-glow glow-one"></div>
+    <div class="bg-glow glow-two"></div>
+
+    <main class="auth-shell">
+      <section class="auth-panel glass-panel wide-panel">
+        <div class="brand-wrap centered">
+          <div class="brand-mark">S</div>
+          <div>
+            <div class="brand-name">SHAÐØW</div>
+            <div class="brand-subtitle">Network</div>
+          </div>
+        </div>
+
+        <h1>Create your account</h1>
+        <p class="sub-copy">Build your private communication circle.</p>
+
+        <form id="register-form" class="auth-form" novalidate>
+          <div class="inline-fields">
+            <label>
+              <span>First name</span>
+              <input type="text" name="firstName" placeholder="Astra" required />
+            </label>
+            <label>
+              <span>Last name</span>
+              <input type="text" name="lastName" placeholder="Nova" required />
+            </label>
+          </div>
+
+          <label>
+            <span>Username</span>
+            <input type="text" name="username" placeholder="astranova" required />
+          </label>
+
+          <label>
+            <span>Email address</span>
+            <input type="email" name="email" placeholder="you@example.com" required />
+          </label>
+
+          <label>
+            <span>Password</span>
+            <input type="password" name="password" placeholder="Create a strong password" required />
+          </label>
+
+          <label>
+            <span>Confirm password</span>
+            <input type="password" name="confirmPassword" placeholder="Confirm your password" required />
+          </label>
+
+          <button class="button primary large" type="submit">Register</button>
+        </form>
+
+        <div class="auth-footer">
+          <span>Already signed up?</span>
+          <a href="login.html" class="text-link">Log in</a>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        if (window.AuthHandler) {
+          window.AuthHandler.initRegister();
+        }
+      });
+    </script>
+  </body>
+</html>

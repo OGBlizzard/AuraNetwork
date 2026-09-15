@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="SHAÐØW Network is a secure private messaging and file-sharing platform for friends, communities, and trusted collaboration."
+    />
+    <meta name="theme-color" content="#070b14" />
+    <title>SHAÐØW Network</title>
+    <link rel="manifest" href="pwa/manifest.json" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/mobile.css" />
+  </head>
+  <body class="landing-page">
+    <div class="bg-glow glow-one"></div>
+    <div class="bg-glow glow-two"></div>
+
+    <header class="topbar landing-bar">
+      <div class="brand-wrap">
+        <div class="brand-mark">S</div>
+        <div>
+          <div class="brand-name">SHAÐØW</div>
+          <div class="brand-subtitle">Network</div>
+        </div>
+      </div>
+      <nav class="top-links">
+        <a href="#features">Features</a>
+        <a href="#security">Security</a>
+        <a href="#download">Download</a>
+        <a class="button ghost" href="login.html">Log in</a>
+        <a class="button primary" href="register.html">Create account</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">Private communication</span>
+          <h1>Secure conversations for your inner circle.</h1>
+          <p>
+            Share private files, chat securely, and manage trusted communities with a platform built for privacy,
+            speed, and mobile-first access.
+          </p>
+          <div class="cta-row">
+            <a class="button primary large" href="register.html">Start your network</a>
+            <a class="button secondary large" href="login.html">Access account</a>
+          </div>
+          <ul class="hero-meta">
+            <li>End-to-end-ready encryption</li>
+            <li>Cloudflare-backed storage</li>
+            <li>Cross-platform PWA</li>
+          </ul>
+        </div>
+
+        <div class="hero-panel glass-panel">
+          <div class="mini-header">
+            <span class="status online"></span>
+            Live network status
+          </div>
+          <div class="stat-grid">
+            <div class="stat-card">
+              <span class="stat-label">Users</span>
+              <strong>2.4K</strong>
+            </div>
+            <div class="stat-card">
+              <span class="stat-label">Messages</span>
+              <strong>184K</strong>
+            </div>
+            <div class="stat-card">
+              <span class="stat-label">Files</span>
+              <strong>9.7K</strong>
+            </div>
+            <div class="stat-card">
+              <span class="stat-label">Uptime</span>
+              <strong>99.99%</strong>
+            </div>
+          </div>
+          <div class="activity-list">
+            <div class="activity-item">
+              <span class="dot cyan"></span>
+              <div>
+                <strong>Rift</strong>
+                <small>Shared a secure archive</small>
+              </div>
+            </div>
+            <div class="activity-item">
+              <span class="dot violet"></span>
+              <div>
+                <strong>Nova</strong>
+                <small>Sent a private message</small>
+              </div>
+            </div>
+            <div class="activity-item">
+              <span class="dot pink"></span>
+              <div>
+                <strong>Studio</strong>
+                <small>Uploaded a community asset</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="feature-section">
+        <div class="section-heading">
+          <span class="eyebrow">Built for trusted sharing</span>
+          <h2>Everything private collaboration needs.</h2>
+        </div>
+        <div class="card-grid three-up">
+          <article class="glass-panel feature-card">
+            <span class="feature-icon">✦</span>
+            <h3>Private messaging</h3>
+            <p>Start secure conversations, manage friend requests, and see live presence indicators.</p>
+          </article>
+          <article class="glass-panel feature-card">
+            <span class="feature-icon">◫</span>
+            <h3>Encrypted file sharing</h3>
+            <p>Upload encrypted private files with permission-based access and friend or community sharing.</p>
+          </article>
+          <article class="glass-panel feature-card">
+            <span class="feature-icon">◎</span>
+            <h3>Community control</h3>
+            <p>Moderate approved community uploads with clear permissions and audit visibility.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="security" class="feature-section security-panel glass-panel">
+        <div class="section-heading left">
+          <span class="eyebrow">Security model</span>
+          <h2>Strong cloud architecture without trusting the browser.</h2>
+        </div>
+        <div class="security-grid">
+          <div>
+            <h4>What the app does</h4>
+            <ul>
+              <li>Uses HttpOnly secure cookies for authenticated sessions.</li>
+              <li>Stores only server-side hashed credentials.</li>
+              <li>Validates file access and permissions on the backend.</li>
+              <li>Separates private, shared, and community areas.</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Operational requirement</h4>
+            <ul>
+              <li>Cloudflare D1 stores metadata and access records.</li>
+              <li>Cloudflare R2 stores encrypted private objects without public access.</li>
+              <li>Cloudflare Workers enforce auth, rate limits, and policy checks.</li>
+              <li>Browser-side encryption protects user files before upload.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="download" class="feature-section app-cta">
+        <div class="glass-panel callout-box">
+          <span class="eyebrow">Install on mobile</span>
+          <h2>Add SHAÐØW Network to your home screen.</h2>
+          <p>Use the browser install prompt on iPhone or Android to add the app as a standalone PWA.</p>
+          <a class="button primary large" href="register.html">Create an account</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>SHAÐØW Network © 2026</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('pwa/service-worker.js').catch(() => {
+            console.info('Service worker is not available during local static testing.');
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
