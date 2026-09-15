@@ -1,0 +1,81 @@
+.app-body {
+  background: radial-gradient(circle at top right, rgba(139, 124, 246, 0.12), transparent 25%);
+}
+
+.file-list,
+.friend-list,
+.result-list,
+.chat-list {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.file-card .meta {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.friend-item,
+.result-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.friend-item {
+  padding: 0.75rem 0.8rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(147, 168, 255, 0.1);
+}
+
+.friend-item .presence {
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 50%;
+  background: var(--success);
+  box-shadow: 0 0 12px rgba(93, 236, 177, 0.7);
+}
+
+.file-card .meta button,
+.result-item button,
+.friend-item button {
+  min-width: 5rem;
+}
+
+.search-box.small-box {
+  margin-bottom: 0.9rem;
+}
+
+.chat-thread {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(147, 168, 255, 0.35) transparent;
+}
+
+.chat-thread::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-thread::-webkit-scrollbar-thumb {
+  background: rgba(147, 168, 255, 0.35);
+  border-radius: 999px;
+}
+
+.file-grid.list-view {
+  grid-template-columns: 1fr;
+}
+
+.file-card.list-card {
+  display: flex;
+  align-items: center;
+}
+
+.file-card.list-card .file-thumb {
+  width: 120px;
+  min-width: 120px;
+}
+
+.list-card .meta {
+  flex: 1;
+}
