@@ -1,0 +1,23 @@
+.auth-panel {
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(110, 231, 255, 0.8), transparent);
+}
+
+.auth-form label span,
+.stack-form label span {
+  font-weight: 500;
+}
+
+.auth-form button,
+.stack-form button {
+  margin-top: 0.4rem;
+}

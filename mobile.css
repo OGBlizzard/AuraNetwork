@@ -1,0 +1,35 @@
+@media (max-width: 600px) {
+  .hero-copy h1 {
+    font-size: 2.5rem;
+  }
+
+  .auth-panel,
+  .wide-panel {
+    padding: 1.3rem 1rem;
+  }
+
+  .button,
+  .button.large {
+    width: 100%;
+  }
+
+  .cta-row,
+  .top-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .brand-wrap {
+    gap: 0.55rem;
+  }
+
+  .mobile-nav {
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+  }
+}
